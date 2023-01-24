@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>catalog</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- App references -->
+    <script src="/js/indexeddbdatasource.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/catalog/catalog.css" rel="stylesheet" />
+    <script src="/pages/catalog/catalog.js"></script>
+</head>
+<body>
+    <div class="catalog fragment">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="logo">
+                <img src="/images/headerlogo.png" />
+            </h1>
+            <div class="pages">
+                <h2 id="stageNavigationItem"><span class="icon"></span> stage</h2>
+                <h2 id="catalogNavigationItem" class="active"><span class="icon"></span> catalog</h2>
+            </div>
+        </header>
+        <section aria-label="Songs catalog" role="main">
+            <div id="alphabet" style="opacity:0;">
+                <button data-letter="a">a</button>
+                <button data-letter="b">b</button>
+                <button data-letter="c">c</button>
+                <button data-letter="d">d</button>
+                <button data-letter="e">e</button>
+                <button data-letter="f">f</button>
+                <button data-letter="g">g</button>
+                <button data-letter="h">h</button>
+                <button data-letter="i">i</button>
+                <button data-letter="j">j</button>
+                <button data-letter="k">k</button>
+                <button data-letter="l">l</button>
+                <button data-letter="m">m</button>
+                <button data-letter="n">n</button>
+                <button data-letter="o">o</button>
+                <button data-letter="p">p</button>
+                <button data-letter="q">q</button>
+                <button data-letter="r">r</button>
+                <button data-letter="s">s</button>
+                <button data-letter="t">t</button>
+                <button data-letter="u">u</button>
+                <button data-letter="v">v</button>
+                <button data-letter="w">w</button>
+                <button data-letter="x">x</button>
+                <button data-letter="y">y</button>
+                <button data-letter="z">z</button>
+            </div>
+            <div id="songItemTemplate" data-win-control="WinJS.Binding.Template">
+                <div class="songItem">
+                    <div class="trackNumber"><span data-win-bind="innerText: trackNumber"></span></div>
+                    <div class="title win-type-ellipsis" data-win-bind="innerText: title"></div>
+                    <div class="duration" data-win-bind="innerText: duration Jukeboxer.Converters.durationConverter"></div>
+                </div>
+            </div>
+
+            <div id="searchResultItemTemplate" data-win-control="WinJS.Binding.Template">
+                <div class="searchResultItem">
+                    <div class="artist win-type-ellipsis" data-win-bind="innerText: artist"></div>
+                    <div class="album win-type-ellipsis" data-win-bind="innerText: album"></div>
+                    <div class="title win-type-ellipsis" data-win-bind="innerText: title"></div>
+                    <div class="duration" data-win-bind="innerText: duration Jukeboxer.Converters.durationConverter"></div>
+                </div>
+            </div>
+
+            <div id="albumItemTemplate" data-win-control="WinJS.Binding.Template">
+                <div class="albumItem win-type-ellipsis">
+                    <img class="albumArt" src="/images/DefaultAlbumArt_32.png" />
+                    <span class="album" data-win-bind="innerText: album"></span>
+                </div>
+            </div>
+
+            <div id="artistItemTemplate" data-win-control="WinJS.Binding.Template">
+                <div class="artistItem">
+                    <span class="artist win-type-ellipsis" data-win-bind="innerText: artist"></span>
+                </div>
+            </div>
+
+            <div id="repertoireListView"></div>
+            <div id="repertoireCover"></div>
+        </section>
+    </div>
+    <div id="appbar" data-win-control="WinJS.UI.AppBar" data-win-options="{ sticky: 'true' }">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdSync', label:'Sync', section: 'global', icon:'sync', tooltip: 'Sync catalog with Music library'}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdAddToPlaylist', label:'Add to playlist', section: 'selection', icon:'add', extraClass:'onSelection'}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdClearSelection', label:'Clear', section: 'selection', icon:'clearselection', extraClass:'onSelection'}"></button>
+    </div>
+</body>
+</html>

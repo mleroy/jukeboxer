@@ -1,0 +1,148 @@
+﻿#contentHost {
+    height: 100%;
+    width: 100%;
+    font-size: large;
+}
+
+.fragment {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 110px 15px 1fr;
+    display: -ms-grid;
+    height: 100%;
+    width: 100%;
+    background-image: url('/images/equalizer.png');
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+
+    .fragment header[role=banner] {
+        -ms-grid-columns: 100px auto 1fr;
+        -ms-grid-rows: 1fr;
+        display: -ms-grid;
+        background-color:#2F1342;
+    }
+
+        .fragment header[role=banner] .win-backbutton {
+            margin-left: 39px;
+            margin-top: 40px;
+        }
+
+        .fragment header[role=banner] .logo {
+            -ms-grid-column: 2;
+            margin-top: 15px;
+        }
+
+        .fragment header[role=banner] .pages {
+            -ms-grid-column: 3;
+            margin-top: 12px;
+            margin-right: 20px;
+            text-align: right;
+        }
+
+            .fragment header[role=banner] .pages > * {
+                display: inline-block;
+                padding: 10px;
+                margin: 20px;
+                opacity: 0.5;
+                cursor: pointer;
+            }
+
+                .fragment header[role=banner] .pages > *:hover {
+                    opacity: 0.85;
+                }
+
+            .fragment header[role=banner] .pages .icon {
+                font-size: large;
+            }
+
+            .fragment header[role=banner] .pages .active {
+                opacity: 1;
+            }
+
+    .fragment section[role=main] {
+        -ms-grid-row: 3;
+        height: 100%;
+        width: 100%;
+    }
+
+progress {
+    color: #ddd;
+}
+
+@media screen and (-ms-view-state: snapped) {
+    #contentHost {
+        font-size: 11pt;
+    }
+
+    .fragment {
+        -ms-grid-rows: auto 15px 1fr;
+        overflow-y: auto; 
+    }
+
+    .fragment header[role=banner] {
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: auto auto;
+        padding:0 20px 10px 20px;
+        margin:0;
+    }
+
+        .fragment header[role=banner] .win-backbutton {
+            display: none;
+        }
+
+        .fragment header[role=banner] .logo {
+            -ms-grid-column: 1;
+        }
+
+        .fragment header[role=banner] .pages {
+            -ms-grid-row: 2;
+            -ms-grid-column:1;
+            margin-right:0;
+        }
+
+            .fragment header[role=banner] .pages > * {
+                padding: 0 0 0 10px;
+                margin: 0;
+            }
+
+            .fragment header[role=banner] .pages .icon {
+                font-size: medium;
+            }
+}
+
+@media screen and (-ms-view-state: filled) {
+    .fragment header[role=banner] {
+        -ms-grid-columns: 70px 1fr;
+    }
+
+        .fragment header[role=banner] .win-backbutton {
+            margin-left: 9px;
+        }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .fragment header[role=banner] {
+        -ms-grid-columns: 70px 1fr;
+    }
+
+        .fragment header[role=banner] .win-backbutton {
+            margin-left: 9px;
+        }
+}
+
+#appProgressBar {
+    top: 0;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+}
+
+/* Default style for list view items sets the UI theme background color instead of transparent ... */
+.win-listview :not(.win-footprint).win-container {
+    background-color: inherit;
+}
+
+b, .semibold {
+    font-family: "Segoe UI Semibold";
+    font-weight: normal;
+}

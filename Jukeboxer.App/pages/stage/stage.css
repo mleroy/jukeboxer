@@ -1,0 +1,411 @@
+﻿.stage section[role=main] {
+    margin-left: 100px;
+    margin-right: 20px;
+    width: auto;
+    height: 100%;
+    display: -ms-grid;
+    -ms-grid-columns: auto 20px 1fr;
+    -ms-grid-rows: 2.25fr 20px auto 20px 1fr;
+}
+
+.area {
+    padding: 20px 10px 10px 20px;
+    background: rgba(255,255,255,0.02);
+}
+
+#currentSongContainer {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    display: -ms-grid;
+    -ms-grid-columns: 256px 10px 1fr;
+    -ms-grid-rows: 1fr;
+}
+
+#connectionContainer {
+    -ms-grid-column: 1;
+    -ms-grid-row: 3;
+    text-align: center;
+    padding: 10px;
+}
+
+#setlistContainer {
+    -ms-grid-column: 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    display: -ms-grid;
+    -ms-grid-rows: auto 1fr;
+    -ms-grid-columns: 1fr;
+}
+
+#dancefloorContainer {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    -ms-grid-row: 5;
+    display: -ms-grid;
+    -ms-grid-rows: auto 1fr;
+    -ms-grid-columns: 1fr;
+    max-height: 400px;
+}
+
+/*
+ *
+ * Stage elements
+ * 
+ */
+
+#albumArtAndControls {
+    -ms-grid-column: 1;
+    -ms-grid-rows: auto auto auto auto;
+    width: 256px;
+}
+
+#trackInfo {
+    -ms-grid-column: 3;
+    display: -ms-grid;
+    -ms-grid-rows: auto auto 30px auto 45px 1fr;
+    -ms-grid-columns: 1fr;
+}
+
+    #trackInfo.songs {
+        width: 350px;
+    }
+
+    #trackInfo.nosongs {
+        width: 100px;
+    }
+
+#currentSongAlbumArt {
+    -ms-grid-row: 1;
+    width: 256px;
+    height: 256px;
+}
+
+#currentSongArtist {
+    -ms-grid-row: 1;
+    font-size: x-large;
+}
+
+#currentSongTitle {
+    -ms-grid-row: 2;
+    font-size: xx-large;
+}
+
+#currentSongAlbum {
+    -ms-grid-row: 4;
+    font-size: large;
+}
+
+#requestorsListView {
+    -ms-grid-row: 6;
+    margin-top: 0px;
+    height: 100%;
+}
+
+.requestorItem {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 10px auto;
+}
+
+.requestorItemMeta {
+    -ms-grid-column: 3;
+    -ms-grid-column-align: end;
+    color: #AAA;
+}
+
+#currentSongTiming {
+    -ms-grid-row: 6;
+    display: -ms-grid;
+    -ms-grid-columns: auto 1fr;
+}
+
+#currentSongProgressBar {
+    -ms-grid-column: 2;
+    height: 9px;
+    margin-left: 15px;
+    margin-top: 8px;
+    width: auto;
+    color: #ccc;
+}
+
+#currentSongCurrentTime {
+    font-family: "Segoe UI Semibold";
+}
+
+#currentSongControls {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    margin-top: 15px;
+}
+
+#currentSongPrevious {
+    -ms-grid-column: 1;
+}
+
+#currentSongPause {
+    -ms-grid-column: 2;
+    text-align: center;
+}
+
+#currentSongNext {
+    -ms-grid-column: 3;
+    text-align: right;
+}
+
+#currentSongControls button {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    font-size: 15pt;
+    min-width: 0;
+}
+
+#setlistCover {
+    -ms-grid-row: 2;
+    margin-top: 75px;
+    text-align: center;
+}
+
+.smallRounded {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    font-size: 10pt;
+    min-width: 0;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+/*
+ * Playlist items
+ */
+
+#playlistListView {
+    -ms-grid-row: 2;
+    height: 100%;
+}
+
+.playlistItem {
+    display: -ms-grid;
+    -ms-grid-columns: auto auto 1fr auto auto;
+    -ms-grid-rows: auto auto;
+}
+
+.playlistItemNowPlaying {
+    -ms-grid-row-span: 2;
+    width: 32px;
+    height: 32px;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.playlistItemAlbumArt {
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    width: 48px;
+    height: 48px;
+    margin: 5px 8px 0 8px;
+}
+
+.playlistItemArtist {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    margin-right: 5px;
+}
+
+.playlistItemTitle {
+    -ms-grid-column: 3;
+    font-size: larger;
+    margin-right: 5px;
+}
+
+.playlistItemRequestCount {
+    -ms-grid-column: 4;
+    padding: 5px;
+}
+
+.playlistItemDuration {
+    -ms-grid-column: 5;
+    padding: 5px 10px 0 5px;
+    min-width: 35px;
+}
+
+/* Selection state of list view items */
+#setlistContainer .win-selectionborder {
+    border-color: #333;
+}
+
+#setlistContainer .win-selectionbackground {
+    background-color: #333;
+}
+
+#setlistContainer .win-selectioncheckmarkbackground {
+    border-width: 0;
+}
+
+#setlistContainer .win-selectioncheckmark {
+    background-color: #333;
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+/*
+ * Activity feed
+ */
+
+#activitiesCover {
+    -ms-grid-row: 2;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#activity h2 {
+    -ms-grid-row: 1;
+}
+
+#activitiesListView {
+    -ms-grid-row: 2;
+    height: 100%;
+}
+
+.activityItem {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr auto;
+}
+
+.activityItemTime {
+    -ms-grid-column: 2;
+    -ms-grid-column-align: end;
+    color: #AAA;
+    min-width: 80px;
+}
+
+#setupFlyout .error {
+    color: darkred;
+}
+
+#partyDetails {
+    word-wrap: break-word;
+    max-width: 550px; /* Prevent long urls from expanding the left column */
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .stage section[role=main] {
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: auto 10px auto 10px auto;
+        margin-left: 20px;
+    }
+
+    .area {
+        padding: 10px;
+    }
+
+    #currentSongContainer {
+        margin-right: 0;
+        display: -ms-grid;
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: auto 10px auto;
+    }
+
+    #albumArtAndControls {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+    }
+
+    #trackInfo {
+        -ms-grid-column: 1;
+        -ms-grid-row: 3;
+        -ms-grid-rows: auto auto 30px 1fr;
+    }
+
+        #trackInfo.songs, #trackInfo.nosongs {
+            width: auto;
+        }
+
+    .win-backbutton,
+    #currentSongAlbum, .requestorItemMeta,
+    .playlistItemAlbumArt, .playlistItemDuration,
+    #dancefloorContainer,
+    #cmdLoadPlaylist, #cmdSaveAsPlaylist,
+    #appBarSeparator {
+        display: none;
+    }
+
+    #requestorsListView {
+        -ms-grid-row: 4;
+    }
+
+    .requestorItem {
+        display: block;
+    }
+
+    #setlistCover {
+        margin-top: 10px;
+    }
+
+    #setlistContainer {
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+        -ms-grid-row-span: 1;
+    }
+}
+
+@media screen and (-ms-view-state: filled) {
+    .stage section[role=main] {
+        margin-left: 70px;
+    }
+
+    .area {
+        padding: 15px 5px 5px 15px;
+    }
+
+    #trackInfo.songs {
+        width: 250px;
+    }
+
+    #trackInfo.nosongs {
+        width: 75px;
+    }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .stage section[role=main] {
+        margin-left: 70px;
+    }
+
+    #dancefloorContainer {
+        min-height: 400px;
+        max-height: 600px;
+    }
+
+    #currentSongContainer {
+        margin-right: 0;
+        display: -ms-grid;
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: auto 10px auto;
+    }
+
+    #albumArtAndControls {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+    }
+
+    #trackInfo {
+        -ms-grid-column: 1;
+        -ms-grid-row: 3;
+        -ms-grid-rows: auto auto 30px 1fr;
+    }
+
+    #requestorsListView {
+        -ms-grid-row: 4;
+    }
+
+    .requestorItem {
+        display: block;
+    }
+
+    #currentSongAlbum, .requestorItemMeta,
+    .playlistItemAlbumArt, .playlistItemDuration
+    {
+        display: none;
+    }
+}

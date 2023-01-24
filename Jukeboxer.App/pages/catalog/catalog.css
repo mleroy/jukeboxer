@@ -1,0 +1,187 @@
+﻿.catalog section[role=main] {
+    display: -ms-grid;
+    -ms-grid-rows: 1fr;
+    -ms-grid-columns: 100px 1fr;
+}
+
+#alphabet {
+    margin-left: 25px;
+    -ms-grid-column: 1;
+}
+
+    #alphabet button {
+        width: 30px;
+        height: 30px;
+        background-color: #333;
+        font-size: large;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        float: left;
+        text-align: center;
+        color: #666;
+        /* Override default button style */
+        border-width: 0;
+        min-width: 30px;
+        min-height: 30px;
+        padding: 0;
+        font-weight: normal;
+    }
+
+        #alphabet button[data-index] {
+            color: white;
+        }
+
+#repertoireCover {
+    text-align: center;
+    margin-top: 100px;
+    -ms-grid-column: 2;
+}
+
+#repertoireListView {
+    height: 100%;
+    width: auto;
+    font-size: large;
+    -ms-grid-column: 2;
+}
+
+    #repertoireListView .win-item {
+        padding: 8px;
+    }
+
+.artistItem {
+    border-bottom: 2px solid #333;
+    font-family: 'Segoe UI Semibold';
+}
+
+.albumItem {
+    border-bottom: 1px solid #333;
+}
+
+    .albumItem .albumArt {
+        width: 24px;
+        height: 24px;
+    }
+
+    .albumItem .album {
+        vertical-align: top;
+        margin-left: 5px;
+    }
+
+.songItem {
+    display: -ms-grid;
+    -ms-grid-columns: auto 1fr auto;
+    margin-left: 15px;
+}
+
+    .songItem .trackNumber {
+        -ms-grid-column: 1;
+        min-width: 40px;
+        margin-left: 25px;
+    }
+
+    .songItem .title {
+        -ms-grid-column: 2;
+    }
+
+    .songItem .duration {
+        -ms-grid-column: 3;
+    }
+
+.searchResultItem {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 2fr auto;
+}
+
+    .searchResultItem .artist {
+        -ms-grid-column: 1;
+    }
+
+    .searchResultItem .album {
+        -ms-grid-column: 2;
+    }
+
+    .searchResultItem .title {
+        -ms-grid-column: 3;
+    }
+
+    .searchResultItem .duration {
+        -ms-grid-column: 4;
+    }
+
+.duration {
+    margin-right: 40px;
+    -ms-grid-column-align: end;
+}
+
+/* Selection state of list view items */
+#repertoireListView .win-selectionborder {
+    border-color: #333;
+}
+
+#repertoireListView .win-selectionbackground {
+    background-color: #333;
+}
+
+#repertoireListView .win-selectioncheckmarkbackground {
+    border-width: 0;
+}
+
+#repertoireListView .win-selectioncheckmark {
+    background-color: #333;
+    margin-top: 8px;
+    margin-right: 6px;
+}
+
+#repertoireListView.win-listview > .win-vertical .win-container {
+    /* Makes items right on top of each other, no spacing */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .catalog section[role=main] {
+        display: -ms-grid;
+        -ms-grid-rows: 1fr;
+        -ms-grid-columns: 80px 1fr;
+    }
+
+    #alphabet {
+        margin-left: 5px;
+        -ms-grid-column: 1;
+    }
+
+    .win-backbutton,
+    .songItem .duration, .songItem .trackNumber,
+    .searchResultItem .album, .searchResultItem .duration {
+        display: none;
+    }
+
+    #repertoireListView {
+        font-size: 11pt;
+    }
+
+    .searchResultItem {
+        -ms-grid-columns: 1fr 1fr;
+        font-size: medium;
+    }
+
+    .songItem {
+        margin-left: 0;
+    }
+}
+
+@media screen and (-ms-view-state: filled) {
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .catalog section[role=main] {
+        display: -ms-grid;
+        -ms-grid-rows: 1fr;
+        -ms-grid-columns: 80px 1fr;
+    }
+
+    #alphabet {
+        margin-left: 5px;
+        -ms-grid-column: 1;
+    }
+}

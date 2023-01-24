@@ -1,0 +1,35 @@
+﻿<!doctype HTML>
+<html>
+<head>
+    <title>Feedback</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function sendFeedback() {
+            var uri = new Windows.Foundation.Uri("mailto:info@jukebxr.com?subject=Feedback on Jukeboxer");
+            Windows.System.Launcher.launchUriAsync(uri);
+        }
+    </script>
+    <!-- BEGINSETTINGFLYOUT -->
+    <div data-win-control="WinJS.UI.SettingsFlyout" aria-label="Feedback settings flyout" data-win-options="{settingsCommandId:'feedback',width:'narrow'}">
+        <div class="win-ui-dark win-header" style="background-color: #333">
+            <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+            <div class="win-label">Feedback</div>
+        </div>
+        <div class="win-content">
+            <div class="win-settings-section">
+                <div>Your feedback is important.</div>
+                <ul>
+                    <li>Do you have a feature request?</li>
+                    <li>Is something not working right?</li>
+                    <li>A general comment?</li>
+                </ul>
+                <div>Please send it our way to improve Jukeboxer!</div>
+                <br />
+                <button id="sendFeedback" onclick="sendFeedback();">Send feedback</button>
+            </div>
+        </div>
+    </div>
+    <!-- ENDSETTINGSFLYOUT -->
+</body>
+</html>
